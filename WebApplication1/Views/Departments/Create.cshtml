@@ -1,0 +1,38 @@
+﻿@model Department
+
+<h1 style=" background-color:black;
+            color:azure"
+            class="text-center">
+    Create New
+</h1>
+
+<div class="row">
+    <form method="post" asp-controller="Departments"
+            asp-action="AddDepartment" class="col-4">
+
+        <div asp-validation-summary="All" class="text-danger"> </div>
+        <div>
+            <label>FullName</label>
+            <input type="text" asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        
+        <div>
+            <button type="submit"
+                class="btn btn-primary"
+                mt-4 >
+                Add
+            </button>
+        </div>
+    </form>
+</div>
+
+<a asp-controller="Departments"
+   asp-action="GetIndexView"> 
+        Back To List
+</a>

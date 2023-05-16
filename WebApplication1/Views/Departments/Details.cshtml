@@ -1,0 +1,39 @@
+﻿@model Department
+
+
+<h1 style=" background-color: blue;
+        color:yellow">
+           Details
+</h1>
+
+
+<dl class="row">
+    <dt class="col-1">Id</dt>
+    <dd class="col-11">@Model.Id</dd>
+
+    <dt class="col-1">Name</dt>
+    <dd class="col11">@Model.Name</dd>
+    
+    <dt class="col-1">Position</dt>
+    <dd class="col-11">@Model.Description</dd>
+</dl>
+
+<h3>Employees</h3>
+
+<ul>
+    @foreach (var employee in Model.Employees)
+    {
+        <li class="list-group-item list-group-item action">
+            @employee.FullName
+        </li>
+    }
+
+
+
+</ul>
+
+
+<a  asp-controller="Departments"
+    asp-action="GetIndexView">
+    Back To Departments
+</a>
